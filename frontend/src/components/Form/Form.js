@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import CityDropDown from "../Inputs/CityDropDown";
 import MultiCheckboxs from "../Inputs/MultiCheckboxs";
-
 const { isValidData, BACKEND } = require("../../Utils/helper");
 
 const useStyles = makeStyles((theme) => ({
@@ -37,10 +36,12 @@ export default function Form() {
   const [checked, setChecked] = useState(false);
   const [conditions, setConditions] = useState([]);
   const [city, setCity] = useState();
-  const handleCityDropDown = (event, newInputValue) => setCity(newInputValue);
-  const handleMultiCheckboxs = (event, newInputValue) =>
+  const handleCityDropDown = (event, newInputValue) => {
+    setCity(newInputValue);
+  };
+  const handleMultiCheckboxs = (event, newInputValue) => {
     setConditions(newInputValue);
-
+  };
   const onChange = (i) => {
     checkIsValid(i.target.name, i.target.value);
     setForm({ ...form, [i.target.name]: i.target.value });
@@ -76,22 +77,18 @@ export default function Form() {
 
   const fetchFunction = (submitForm, e) => {
     return fetch(`${BACKEND.ADDRESS}/api/user/`, {
-      method: "POST", // or 'PUT'
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(submitForm),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log("data", data);
-        console.log("data", data.message);
+      .then(() => {
         setErrorMassage("Report added successfully");
         e.target.reset();
       })
-      .catch((error) => {
-        console.log("error", error);
-        console.log("error.message", error.message);
+      .catch(() => {
         setErrorMassage("Report failed please try again!");
       });
   };

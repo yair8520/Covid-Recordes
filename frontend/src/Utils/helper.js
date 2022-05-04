@@ -1,12 +1,15 @@
 const isValidData = {
-  firstname: { rgx: /^[a-zA-Z]+$/, message: "Not valid Name" },
-  lastname: { rgx: /^[a-zA-Z]+$/, message: "Not valid Name" },
-  address: { rgx: /^[a-zA-Z0-9\s,.'-]{3,}$/, message: "Not valid address" },
-  City: { rgx: /^[a-zA-Z]+$/, message: "please select from the dropdown" },
-  zipcode: { rgx: /(^\d{7}$)/, message: "Not valid zip code" },
-  landline: { rgx: /[0-9]{10}/, message: "Not valid landline phone number" },
+  firstname: { rgx: /^([a-zA-Z]+)?$/, message: "Not valid Name" },
+  lastname: { rgx: /^([a-zA-Z]+)?$/, message: "Not valid Name" },
+  address: { rgx: /^([a-zA-Z0-9\s,.'-]{3,})?$/, message: "Not valid address" },
+  City: { rgx: /^([a-zA-Z]+)?$/, message: "please select from the dropdown" },
+  zipcode: { rgx: /^(\d{5})?$/, message: "Not valid zip code" },
+  landline: {
+    rgx: /^([0-9]{10})?$/,
+    message: "Not valid landline phone number",
+  },
   cellularphone: {
-    rgx: /[0-9]{10}/,
+    rgx: /^([0-9]{10})?$/,
     message: "Not valid cellular phone number",
   },
   dateofbirth: { rgx: /[0-9]/, message: "please select your date " },
