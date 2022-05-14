@@ -15,6 +15,6 @@ class User(models.Model):
     landline = models.CharField(max_length=15, default="-")
     cellularphone = models.CharField(max_length=15, default=000000000000000)
     infected = models.BooleanField(default=False)
-    conditions = models.JSONField(default="none")
+    conditions = models.JSONField(default=dict)
 
 

@@ -22,25 +22,25 @@ const COLUMNS = [
   {
     field: "firstname",
     headerName: "firstName",
-    width: 150,
+   
   },
-  { field: "lastname", headerName: "lastName", width: 150 },
+  { field: "lastname", headerName: "lastName" },
   {
     field: "dateofbirth",
     headerName: "dateOfBirth",
-    width: 150,
+    
     type: "date",
   },
   { field: "address", headerName: "address", width: 150 },
   { field: "city", headerName: "city", width: 150 },
-  { field: "zipcode", headerName: "zipCode", width: 150 },
+  { field: "zipcode", headerName: "zipCode" },
   {
     field: "cellularphone",
     headerName: "cellularphone",
     width: 150,
     allowResizing: true,
   },
-  { field: "landline", headerName: "landline", width: 150 },
+  { field: "landline", headerName: "landline"},
   {
     field: "infected",
     headerName: "infected ? ",
